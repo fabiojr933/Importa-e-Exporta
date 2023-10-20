@@ -55,6 +55,12 @@ if (isset($_POST['acionar_funcao_importar'])) {
         $db->estoquerodutosInsert($empresa);
     }
 
+    $cliente = $_POST['cliente'];
+    if ($cliente == 'on') {
+        $db = new Exportacao();
+        $db->clienteGeralInsert();
+    }
+
     header("Location: ../index.php");
     exit;
 }
